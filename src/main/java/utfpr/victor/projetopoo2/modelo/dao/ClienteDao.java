@@ -8,9 +8,13 @@ import java.util.List;
  */
 public interface ClienteDao {
     void cadastrar(Cliente cliente);
+    
     void atualizar(Cliente cliente);
+    
     void excluir(Cliente cliente);
+    
     List<Cliente> listarTodos();   
+    
     Cliente listarUm(Long id);
      
     
