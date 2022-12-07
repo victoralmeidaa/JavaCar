@@ -14,9 +14,70 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 
+//@Table(name = "tb_pessoa")
+
 public class Pessoa {
+    
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
+    
+    private String cpf;
+    
+    private String sexo;
+    
+    private String telefone;
+    
+    private String endereço;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEndereço(String endereço) {
+        this.endereço = endereço;
+    }
+    
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getEndereço() {
+        return endereço;
+    }
+
 }

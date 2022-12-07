@@ -13,7 +13,7 @@ public class ConexaoHibernate {
     private static EntityManagerFactory factory;
     private static EntityManager manager;
     
-    private static EntityManager getInstance(){
+    public static EntityManager getInstance(){
         if(manager == null){
             synchronized (ConexaoHibernate.class){
                 if(manager == null){

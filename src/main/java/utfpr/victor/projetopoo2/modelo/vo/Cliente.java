@@ -1,6 +1,5 @@
 package utfpr.victor.projetopoo2.modelo.vo;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -9,9 +8,19 @@ import javax.persistence.OneToMany;
  * @author victo
  */
 @Entity
+
+//@Table(name = "tb_clinte")
+
 public class Cliente extends Pessoa {
+    private Integer idCli;
+    
     @OneToMany(mappedBy = "cliente")
-    // List<venda> Vendas;
-    @Embedded
-    private Endereco endereco;
+    
+    public Integer getIdCli() {
+        return idCli;
+    }
+    
+    public void setIdCli(Integer idCli) {
+        this.idCli = idCli;
+    }
 }

@@ -7,8 +7,8 @@ package utfpr.victor.projetopoo2.modelo.dao;
 
 /**
  *
- * @author Victor Almeida
+ * @author victo
  */
-public class veiculoDao {
+public interface FuncionarioDao {
     
 }
