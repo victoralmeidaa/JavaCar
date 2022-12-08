@@ -2,6 +2,7 @@ package utfpr.victor.projetopoo2.modelo.dao;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
 import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
 
@@ -18,27 +19,44 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
     
     @Override
     public void cadastrar(Funcionario funcionario) {
-        
+        manager.getTransaction().begin();
+        manager.persist(funcionario);
+        manager.getTransaction().commit();
     }
 
     @Override
     public void atualizar(Funcionario funcionario) {
-        
+        manager.getTransaction().begin();
+        manager.merge(funcionario);
+        manager.getTransaction().commit();
     }
 
     @Override
     public void excluir(Funcionario funcionario) {
-        
+        manager.getTransaction().begin();
+        manager.remove(funcionario);
+        manager.getTransaction().commit();
     }
 
     @Override
     public List<Funcionario> listarTodos() {
+        List<Funcionario> funcionarios;
         
+        Query query = manager.createQuery("SELECT c FROM Funcionario c");
+        funcionarios = query.getResultList();
+        
+        return funcionarios;
     }
 
     @Override
     public Funcionario listUm(Long Id) {
-       
+        Funcionario funcionario;
+        
+        Query query = manager.createQuery("SELECT c FROM Funcionario c WHERE c.id = " + Id);
+        funcionario = (Funcionario)query.getSingleResult();
+        
+        return funcionario; 
+        
     }
     
 }
