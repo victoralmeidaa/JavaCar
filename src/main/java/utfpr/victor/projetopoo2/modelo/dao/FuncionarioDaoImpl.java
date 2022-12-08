@@ -39,7 +39,7 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
     }
 
     @Override
-    public List<Funcionario> listarTodos() {
+    public List<Funcionario> listaTodos() {
         List<Funcionario> funcionarios;
         
         Query query = manager.createQuery("SELECT c FROM Funcionario c");
@@ -49,14 +49,12 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
     }
 
     @Override
-    public Funcionario listUm(Long Id) {
+    public Funcionario listaUm(Long id) {
         Funcionario funcionario;
         
-        Query query = manager.createQuery("SELECT c FROM Funcionario c WHERE c.id = " + Id);
+        Query query = manager.createQuery("SELECT c FROM Funcionario c WHERE c.id = " + id);
         funcionario = (Funcionario)query.getSingleResult();
         
         return funcionario; 
-        
-    }
-    
+    } 
 }
