@@ -8,11 +8,11 @@ import utfpr.victor.projetopoo2.modelo.vo.Servico;
  * @author victo
  */
 public interface ServicoDao{
-    void cadastrar(Servico cliente);
+    void cadastrar(Servico servico);
     
-    void atualizar(Servico cliente);
+    void atualizar(Servico servico);
     
-    void excluir(Servico cliente);
+    void excluir(Servico servico);
     
     List<Servico> listarTodos();   
     
