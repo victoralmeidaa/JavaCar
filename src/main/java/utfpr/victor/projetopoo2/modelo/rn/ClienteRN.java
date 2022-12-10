@@ -1,5 +1,6 @@
 package utfpr.victor.projetopoo2.modelo.rn;
 
+import java.util.List;
 import org.hibernate.HibernateException;
 import utfpr.victor.projetopoo2.modelo.dao.ClienteDao;
 import utfpr.victor.projetopoo2.modelo.dao.ClienteDaoImpl;
@@ -23,5 +24,21 @@ public class ClienteRN {
         } catch(HibernateException he){
             System.err.println(he);
         }
+    }
+    
+    public void atualizar(Cliente cliente){
+        clienteDao.atualizar(cliente);
+    }
+    
+    public void excluir(Cliente cliente){
+        clienteDao.excluir(cliente);
+    }
+    
+    public List<Cliente> listaTodos(){
+        return clienteDao.listarTodos();
+    }
+    
+    public Cliente listaUm(Long id){
+        return clienteDao.listarUm(id);
     }
 }
