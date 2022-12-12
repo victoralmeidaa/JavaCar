@@ -9,7 +9,7 @@ import utfpr.victor.projetopoo2.modelo.vo.Servico;
  *
  * @author victo
  */
-public class SercivoDaoImpl implements ServicoDao{
+public class ServicoDaoImpl implements ServicoDao{
     EntityManager manager;
     
     @Override

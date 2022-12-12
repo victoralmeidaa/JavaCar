@@ -14,7 +14,7 @@ public interface FuncionarioDao {
     
     void excluir(Funcionario funcionario);
     
-    List<Funcionario> listaTodos();
+    List<Funcionario> listarTodos();
     
-    Funcionario listaUm(Long id);
+    Funcionario listarUm(Long id);
 }

@@ -34,11 +34,11 @@ public class ClienteRN {
         clienteDao.excluir(cliente);
     }
     
-    public List<Cliente> listaTodos(){
+    public List<Cliente> listarTodos(){
         return clienteDao.listarTodos();
     }
     
-    public Cliente listaUm(Long id){
+    public Cliente listarUm(Long id){
         return clienteDao.listarUm(id);
     }
 }

@@ -33,12 +33,12 @@ public class FuncionarioRN {
         funcionarioDao.excluir(funcionario);
     }
     
-    public List<Funcionario> listTodos(){
-        return funcionarioDao.listaTodos();
+    public List<Funcionario> listarTodos(){
+        return funcionarioDao.listarTodos();
     }
     
-    public Funcionario listUm(Long id){
-        return funcionarioDao.listaUm(id);
+    public Funcionario listarUm(Long id){
+        return funcionarioDao.listarUm(id);
     }
     
 }

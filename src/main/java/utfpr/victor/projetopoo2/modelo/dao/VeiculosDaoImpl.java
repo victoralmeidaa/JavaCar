@@ -9,7 +9,7 @@ import utfpr.victor.projetopoo2.modelo.vo.Veiculos;
  *
  * @author victo
  */
-public class VeiculosImpl implements VeiculosDao{
+public class VeiculosDaoImpl implements VeiculosDao{
     EntityManager manager;
 
     @Override
