@@ -10,7 +10,7 @@ import javax.persistence.Table;
  * @author victo
  */
 @Entity
-@Table(name = "tb_clinte")
+@Table(name = "tb_cliente")
 
 
 public class Cliente extends Pessoa {

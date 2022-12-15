@@ -82,7 +82,8 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFLOGINActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Tela_ADM telaAdm = new Tela_ADM();
+        telaAdm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

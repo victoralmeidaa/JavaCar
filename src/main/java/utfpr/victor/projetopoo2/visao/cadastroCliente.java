@@ -27,80 +27,87 @@ public class cadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        tNOME = new javax.swing.JTextField();
+        tCPF = new javax.swing.JTextField();
+        tSEXO = new javax.swing.JTextField();
+        tTELEFONE = new javax.swing.JTextField();
+        tENDERECO = new javax.swing.JTextField();
+        bCADASTRAR = new javax.swing.JButton();
+        TITULO = new javax.swing.JLabel();
+        FUNDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("NOME");
+        tNOME.setText("NOME");
+        tNOME.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tNOMEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tNOME, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 220, -1));
 
-        jTextField2.setText("CPF");
+        tCPF.setText("CPF");
+        getContentPane().add(tCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 220, -1));
 
-        jTextField3.setText("Sexo");
+        tSEXO.setText("Sexo");
+        tSEXO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tSEXOActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tSEXO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 220, -1));
 
-        jTextField4.setText("Telefone");
+        tTELEFONE.setText("Telefone");
+        tTELEFONE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tTELEFONEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tTELEFONE, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 220, -1));
 
-        jTextField5.setText("Endereço");
+        tENDERECO.setText("Endereço");
+        getContentPane().add(tENDERECO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 220, -1));
 
-        jButton1.setText("Cadastrar");
+        bCADASTRAR.setText("Cadastrar");
+        bCADASTRAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCADASTRARActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bCADASTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
-        jButton2.setText("Limpar");
+        TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        TITULO.setText("Cadastro Cliente");
+        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 
-        jLabel1.setText("CadastrarCliente");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel1)))
-                .addContainerGap(112, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
+        FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utfpr/victor/projetopoo2/visao/img/fundo.png"))); // NOI18N
+        getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tSEXOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tSEXOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tSEXOActionPerformed
+
+    private void tTELEFONEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tTELEFONEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tTELEFONEActionPerformed
+
+    private void tNOMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNOMEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tNOMEActionPerformed
+
+    private void bCADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCADASTRARActionPerformed
+        String nome = tNOME.getText();
+        String cpf = tCPF.getText();
+        String sexo = tSEXO.getText();
+        String endereco = tENDERECO.getText();
+        String telefone = tTELEFONE.getText();
+        
+        
+    }//GEN-LAST:event_bCADASTRARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,13 +148,13 @@ public class cadastroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel FUNDO;
+    private javax.swing.JLabel TITULO;
+    private javax.swing.JButton bCADASTRAR;
+    private javax.swing.JTextField tCPF;
+    private javax.swing.JTextField tENDERECO;
+    private javax.swing.JTextField tNOME;
+    private javax.swing.JTextField tSEXO;
+    private javax.swing.JTextField tTELEFONE;
     // End of variables declaration//GEN-END:variables
 }
