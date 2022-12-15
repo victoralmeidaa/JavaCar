@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
  */
 public class GerarBanco {
     public static void main(String[] args){
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("javaCarDB");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("javacardb");
         
         EntityManager manager = factory.createEntityManager();
     }
