@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
 
+
 /**
  *
  * @author victo
@@ -21,11 +22,13 @@ public class GenericDaoImpl<T> implements GenericDao<T>{
     public void save(T object) {
         manager.getTransaction().begin();
         manager.persist(object);
-        manager.getTransaction().commit();    }
+        manager.getTransaction().commit();    
+    }
 
     @Override
     public T listOne(String Name, int Value, Class clazz) {
         String jpql = "SELECT t FROM " + clazz.getTypeName() + " t WHERE t." + Name + " = " + Value;
+        
         Query query = this.manager.createQuery(jpql);
         Object obj = query.getSingleResult();
         
@@ -34,17 +37,26 @@ public class GenericDaoImpl<T> implements GenericDao<T>{
 
     @Override
     public List listaAll(Class clazz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String jpql = "SELECT t FROM " + clazz.getTypeName();
+        
+        Query query  = this.manager.createQuery(jpql);
+        Object obj = query.getResultList();
+        
+        return (List) (T) obj;
     }
 
     @Override
     public void Update(T object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        manager.getTransaction().begin();
+        manager.merge(object);
+        manager.getTransaction().commit();
     }
 
     @Override
     public void delete(T object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        manager.getTransaction().begin();
+        manager.remove(object);
+        manager.getTransaction().commit();
     }
     
     

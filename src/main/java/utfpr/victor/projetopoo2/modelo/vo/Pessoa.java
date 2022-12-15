@@ -1,11 +1,13 @@
 package utfpr.victor.projetopoo2.modelo.vo;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  *
@@ -13,8 +15,7 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-
-//@Table(name = "tb_pessoa")
+@Table(name = "tb_pessoa")
 
 public class Pessoa {
     
