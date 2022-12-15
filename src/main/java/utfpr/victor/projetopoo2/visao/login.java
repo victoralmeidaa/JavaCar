@@ -5,6 +5,9 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Victor Almeida
@@ -27,11 +30,11 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextFLOGIN = new javax.swing.JTextField();
+        tLogin = new javax.swing.JTextField();
         TITULO = new javax.swing.JLabel();
         LobelSENHA = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        tSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         FUNDO = new javax.swing.JLabel();
 
@@ -39,12 +42,12 @@ public class login extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextFLOGIN.addActionListener(new java.awt.event.ActionListener() {
+        tLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFLOGINActionPerformed(evt);
+                tLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFLOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 260, -1));
+        getContentPane().add(tLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 260, -1));
 
         TITULO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         TITULO.setText("Login");
@@ -64,7 +67,7 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 130, -1));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 260, -1));
+        getContentPane().add(tSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 260, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,9 +80,9 @@ public class login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFLOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFLOGINActionPerformed
+    private void tLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFLOGINActionPerformed
+    }//GEN-LAST:event_tLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Tela_ADM telaAdm = new Tela_ADM();
@@ -121,13 +124,31 @@ public class login extends javax.swing.JFrame {
         });
     }
 
+    public JTextField gettLogin() {
+        return tLogin;
+    }
+
+    public void settLogin(JTextField tLogin) {
+        this.tLogin = tLogin;
+    }
+
+    public JPasswordField gettSenha() {
+        return tSenha;
+    }
+
+    public void settSenha(JPasswordField tSenha) {
+        this.tSenha = tSenha;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FUNDO;
     private javax.swing.JLabel LobelSENHA;
     private javax.swing.JLabel TITULO;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextFLOGIN;
+    private javax.swing.JTextField tLogin;
+    private javax.swing.JPasswordField tSenha;
     // End of variables declaration//GEN-END:variables
 }

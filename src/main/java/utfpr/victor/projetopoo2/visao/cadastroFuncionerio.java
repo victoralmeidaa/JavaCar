@@ -9,12 +9,12 @@ package utfpr.victor.projetopoo2.visao;
  *
  * @author Victor Almeida
  */
-public class cadastroCliente extends javax.swing.JFrame {
+public class cadastroFuncionerio extends javax.swing.JFrame {
 
     /**
      * Creates new form cadastroFun
      */
-    public cadastroCliente() {
+    public cadastroFuncionerio() {
         initComponents();
     }
 
@@ -32,6 +32,7 @@ public class cadastroCliente extends javax.swing.JFrame {
         tSEXO = new javax.swing.JTextField();
         tTELEFONE = new javax.swing.JTextField();
         tENDERECO = new javax.swing.JTextField();
+        tSALARIO = new javax.swing.JTextField();
         bCADASTRAR = new javax.swing.JButton();
         TITULO = new javax.swing.JLabel();
         FUNDO = new javax.swing.JLabel();
@@ -45,10 +46,15 @@ public class cadastroCliente extends javax.swing.JFrame {
                 tNOMEActionPerformed(evt);
             }
         });
-        getContentPane().add(tNOME, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 220, -1));
+        getContentPane().add(tNOME, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 220, -1));
 
         tCPF.setText("CPF");
-        getContentPane().add(tCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 220, -1));
+        tCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tCPFActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 220, -1));
 
         tSEXO.setText("Sexo");
         tSEXO.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +62,7 @@ public class cadastroCliente extends javax.swing.JFrame {
                 tSEXOActionPerformed(evt);
             }
         });
-        getContentPane().add(tSEXO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 220, -1));
+        getContentPane().add(tSEXO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 220, -1));
 
         tTELEFONE.setText("Telefone");
         tTELEFONE.addActionListener(new java.awt.event.ActionListener() {
@@ -64,10 +70,13 @@ public class cadastroCliente extends javax.swing.JFrame {
                 tTELEFONEActionPerformed(evt);
             }
         });
-        getContentPane().add(tTELEFONE, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 220, -1));
+        getContentPane().add(tTELEFONE, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 220, -1));
 
         tENDERECO.setText("Endereço");
-        getContentPane().add(tENDERECO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 220, -1));
+        getContentPane().add(tENDERECO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 220, -1));
+
+        tSALARIO.setText("Salario");
+        getContentPane().add(tSALARIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 220, -1));
 
         bCADASTRAR.setBackground(new java.awt.Color(102, 255, 153));
         bCADASTRAR.setForeground(new java.awt.Color(102, 255, 153));
@@ -80,8 +89,8 @@ public class cadastroCliente extends javax.swing.JFrame {
         getContentPane().add(bCADASTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
         TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TITULO.setText("Cadastro Cliente");
-        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+        TITULO.setText("Cadastro Funcionario");
+        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
 
         FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utfpr/victor/projetopoo2/visao/img/fundo.png"))); // NOI18N
         getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -111,6 +120,10 @@ public class cadastroCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
+    private void tCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tCPFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -128,14 +141,18 @@ public class cadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroFuncionerio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroFuncionerio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroFuncionerio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastroFuncionerio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -144,7 +161,7 @@ public class cadastroCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cadastroCliente().setVisible(true);
+                new cadastroFuncionerio().setVisible(true);
             }
         });
     }
@@ -156,6 +173,7 @@ public class cadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField tCPF;
     private javax.swing.JTextField tENDERECO;
     private javax.swing.JTextField tNOME;
+    private javax.swing.JTextField tSALARIO;
     private javax.swing.JTextField tSEXO;
     private javax.swing.JTextField tTELEFONE;
     // End of variables declaration//GEN-END:variables
