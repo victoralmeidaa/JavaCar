@@ -6,37 +6,55 @@
     <artifactId>JavaCar</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
-    
-    <!-- Dependencia do Hibernate -->
+        
     
     <dependencies>
-    <!--  https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager  -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.2.Final</version>
-        </dependency>
-    </dependencies>
-    
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!-- Dependência do MySQL -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.30</version>
+            <version>5.1.48</version>
         </dependency>
+        
+        <!-- Dependência do Hibernate -->
+        <!--  https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager  -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
             <version>4.3.1.Final</version>
             <scope>provided</scope>
         </dependency>
-        
+        <!-- Dependência do Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.1.Final</version>
+        </dependency>
+    
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>        
+                
+    </dependencies>
+  
+        <pluginRepositories>
+            <pluginRepository>
+                <id>central</id>
+                <name>Central Repository</name>
+                <url>https://repo.maven.apache.org/maven2</url>
+                <layout>default</layout>
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
+                <releases>
+                    <updatePolicy>never</updatePolicy>
+                </releases>
+            </pluginRepository>
+            
+        </pluginRepositories>
         
     
     <!--  Configuração para liberar o HTTPS  -->
@@ -55,4 +73,10 @@
         </repository>
     </repositories>
     <name>JavaCar</name>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
 </project>
