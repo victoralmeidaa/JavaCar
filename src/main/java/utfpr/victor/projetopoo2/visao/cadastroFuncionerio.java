@@ -5,6 +5,9 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDaoImpl;
+import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
+
 /**
  *
  * @author Victor Almeida
@@ -27,6 +30,7 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TITULO = new javax.swing.JLabel();
         tNOME = new javax.swing.JTextField();
         tCPF = new javax.swing.JTextField();
         tSEXO = new javax.swing.JTextField();
@@ -34,9 +38,12 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         tENDERECO = new javax.swing.JTextField();
         tSALARIO = new javax.swing.JTextField();
         bCADASTRAR = new javax.swing.JButton();
-        TITULO = new javax.swing.JLabel();
+        bVOLTAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        TITULO.setText("Cadastro Funcionario");
 
         tNOME.setText("NOME");
         tNOME.addActionListener(new java.awt.event.ActionListener() {
@@ -79,8 +86,7 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
             }
         });
 
-        TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TITULO.setText("Cadastro Funcionario");
+        bVOLTAR.setText("Voltar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,9 +107,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                         .addGap(90, 90, 90)
                         .addComponent(TITULO))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(bCADASTRAR))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -111,7 +114,12 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                         .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bCADASTRAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bVOLTAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
@@ -142,7 +150,9 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(88, 88, 88))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bVOLTAR)
+                .addContainerGap())
         );
 
         pack();
@@ -166,6 +176,20 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         String sexo = tSEXO.getText();
         String endereco = tENDERECO.getText();
         String telefone = tTELEFONE.getText();
+        String salario = tSALARIO.getText();
+        
+        Funcionario funcionario = new Funcionario();
+        funcionario.setName(nome);
+        funcionario.setCpf(cpf);
+        funcionario.setSexo(sexo);
+        funcionario.setEndereço(endereco);
+        funcionario.setTelefone(telefone);
+        funcionario.setSalario(salario);
+        
+        FuncionarioDaoImpl funcionarioDao = new FuncionarioDaoImpl();
+        funcionarioDao.cadastrar(funcionario);
+        
+        
         
         
     }//GEN-LAST:event_bCADASTRARActionPerformed
@@ -219,6 +243,7 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TITULO;
     private javax.swing.JButton bCADASTRAR;
+    private javax.swing.JButton bVOLTAR;
     private javax.swing.JTextField tCPF;
     private javax.swing.JTextField tENDERECO;
     private javax.swing.JTextField tNOME;

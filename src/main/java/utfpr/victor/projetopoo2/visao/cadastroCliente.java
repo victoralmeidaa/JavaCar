@@ -80,7 +80,7 @@ public class cadastroCliente extends javax.swing.JFrame {
         });
 
         TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TITULO.setText("Cadastro Funcionario");
+        TITULO.setText("Cadastro Cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,7 +95,7 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addComponent(tTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
+                        .addGap(114, 114, 114)
                         .addComponent(TITULO))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)

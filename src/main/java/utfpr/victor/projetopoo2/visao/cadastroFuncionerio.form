@@ -42,10 +42,6 @@
                       <Component id="TITULO" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
-                      <Component id="bCADASTRAR" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                       <Component id="tNOME" min="-2" pref="220" max="-2" attributes="0"/>
                   </Group>
@@ -56,6 +52,13 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                       <Component id="tSEXO" min="-2" pref="220" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="bCADASTRAR" max="32767" attributes="0"/>
+                          <Component id="bVOLTAR" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
@@ -99,12 +102,22 @@
                       <Component id="tSALARIO" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="bVOLTAR" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JLabel" name="TITULO">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cadastro Funcionario"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JTextField" name="tNOME">
       <Properties>
         <Property name="text" type="java.lang.String" value="NOME"/>
@@ -161,12 +174,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCADASTRARActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="TITULO">
+    <Component class="javax.swing.JButton" name="bVOLTAR">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="24" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Cadastro Funcionario"/>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
     </Component>
   </SubComponents>

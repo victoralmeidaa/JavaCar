@@ -12,15 +12,15 @@ import javax.persistence.Table;
 @Table(name = "tb_Funcionario")
 
 public class Funcionario extends Pessoa {
-    private double salario;
+    private String salario;
     
     @OneToMany(mappedBy = "funcionario")
     
-    public double getSalario() {
+    public String getSalario() {
         return salario;
     }
 
-    public void setSalario(double salario) {
+    public void setSalario(String salario) {
         this.salario = salario;
     }
 }
