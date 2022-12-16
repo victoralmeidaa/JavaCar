@@ -20,20 +20,23 @@ import javax.persistence.Table;
 public class Servico {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idServico;
+    private long id;
 
     private String descricao;
     
-    public long getIdServico() {
-        return idServico;
+    private String titulo;
+
+    public String getTitulo() {
+        return titulo;
     }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setIdServico(long idServico) {
-        this.idServico = idServico;
     }
 
     public void setDescricao(String descricao) {

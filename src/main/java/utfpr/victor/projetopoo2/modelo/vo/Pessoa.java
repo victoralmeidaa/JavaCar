@@ -32,9 +32,6 @@ public class Pessoa {
     
     private String endereço;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -56,11 +53,6 @@ public class Pessoa {
         this.endereço = endereço;
     }
     
-
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }

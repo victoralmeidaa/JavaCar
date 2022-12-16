@@ -186,8 +186,9 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         funcionario.setTelefone(telefone);
         funcionario.setSalario(salario);
         
-        FuncionarioDaoImpl funcionarioDao = new FuncionarioDaoImpl();
-        funcionarioDao.cadastrar(funcionario);
+        FuncionarioDaoImpl funcionarioDaoImpl = new FuncionarioDaoImpl();
+        funcionarioDaoImpl.cadastrar(funcionario);
+        
         
         
         
