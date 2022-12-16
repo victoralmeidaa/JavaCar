@@ -35,10 +35,8 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         tSALARIO = new javax.swing.JTextField();
         bCADASTRAR = new javax.swing.JButton();
         TITULO = new javax.swing.JLabel();
-        FUNDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tNOME.setText("NOME");
         tNOME.addActionListener(new java.awt.event.ActionListener() {
@@ -46,7 +44,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                 tNOMEActionPerformed(evt);
             }
         });
-        getContentPane().add(tNOME, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 220, -1));
 
         tCPF.setText("CPF");
         tCPF.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +51,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                 tCPFActionPerformed(evt);
             }
         });
-        getContentPane().add(tCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 220, -1));
 
         tSEXO.setText("Sexo");
         tSEXO.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +58,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                 tSEXOActionPerformed(evt);
             }
         });
-        getContentPane().add(tSEXO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 220, -1));
 
         tTELEFONE.setText("Telefone");
         tTELEFONE.addActionListener(new java.awt.event.ActionListener() {
@@ -70,13 +65,10 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                 tTELEFONEActionPerformed(evt);
             }
         });
-        getContentPane().add(tTELEFONE, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 220, -1));
 
         tENDERECO.setText("Endereço");
-        getContentPane().add(tENDERECO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 220, -1));
 
         tSALARIO.setText("Salario");
-        getContentPane().add(tSALARIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 220, -1));
 
         bCADASTRAR.setBackground(new java.awt.Color(102, 255, 153));
         bCADASTRAR.setForeground(new java.awt.Color(102, 255, 153));
@@ -86,14 +78,72 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                 bCADASTRARActionPerformed(evt);
             }
         });
-        getContentPane().add(bCADASTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
         TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         TITULO.setText("Cadastro Funcionario");
-        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
 
-        FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utfpr/victor/projetopoo2/visao/img/fundo.png"))); // NOI18N
-        getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(TITULO))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(bCADASTRAR))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(86, 86, 86))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(tCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(291, 291, 291)
+                        .addComponent(tTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(TITULO))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(bCADASTRAR))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(88, 88, 88))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,7 +217,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FUNDO;
     private javax.swing.JLabel TITULO;
     private javax.swing.JButton bCADASTRAR;
     private javax.swing.JTextField tCPF;

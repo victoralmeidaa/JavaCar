@@ -30,33 +30,38 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tLogin = new javax.swing.JTextField();
         TITULO = new javax.swing.JLabel();
+        LabelUsuario = new javax.swing.JLabel();
+        tLogin = new javax.swing.JTextField();
         LobelSENHA = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         tSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        FUNDO = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TITULO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        TITULO.setText("Login");
+
+        LabelUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        LabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        LabelUsuario.setText("Usuario:");
 
         tLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(tLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 260, -1));
-
-        TITULO.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        TITULO.setText("Login");
-        getContentPane().add(TITULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
 
         LobelSENHA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LobelSENHA.setForeground(new java.awt.Color(255, 255, 255));
         LobelSENHA.setText("Senha:");
-        getContentPane().add(LobelSENHA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        tSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tSenhaActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(51, 255, 153));
         jButton1.setForeground(new java.awt.Color(51, 255, 153));
@@ -66,28 +71,71 @@ public class login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 130, -1));
-        getContentPane().add(tSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 260, -1));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Usuario:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
-
-        FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utfpr/victor/projetopoo2/visao/img/fundo.png"))); // NOI18N
-        getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 560));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(LabelUsuario))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(LobelSENHA))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(tSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(TITULO))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(tLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(97, 97, 97))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(TITULO))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(389, 389, 389)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(LabelUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(64, 64, 64)
+                        .addComponent(LobelSENHA)
+                        .addGap(21, 21, 21)
+                        .addComponent(tSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(118, 118, 118))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void tLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tLoginActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: USER LOGIN
     }//GEN-LAST:event_tLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Tela_ADM telaAdm = new Tela_ADM();
-        telaAdm.setVisible(true);
+        //ACAO BOTAO
+        //Tela_ADM telaAdm = new Tela_ADM();
+        //telaAdm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tSenhaActionPerformed
+        // TODO add your handling code here: SENHA LOGIN
+    }//GEN-LAST:event_tSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,11 +165,7 @@ public class login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login().setVisible(true);
-            }
-        });
+        
     }
 
     public JTextField gettLogin() {
@@ -143,11 +187,10 @@ public class login extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FUNDO;
+    private javax.swing.JLabel LabelUsuario;
     private javax.swing.JLabel LobelSENHA;
     private javax.swing.JLabel TITULO;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField tLogin;
     private javax.swing.JPasswordField tSenha;
     // End of variables declaration//GEN-END:variables
