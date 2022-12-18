@@ -5,9 +5,8 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import javax.swing.JOptionPane;
 import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
-import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDao;
-import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDaoImpl;
 import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
 import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
 
@@ -194,8 +193,9 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
        FuncionarioRN funcionarioRN = new FuncionarioRN(); 
        funcionarioRN.atualizar(funcionario);
         
+       JOptionPane.showMessageDialog(null, "Funcionario cadastrado com sucesso!");
        
-        //ConexaoHibernate.close();
+       ConexaoHibernate.close();
        
     }//GEN-LAST:event_bCADASTRARActionPerformed
 

@@ -5,12 +5,11 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+
+import javax.swing.JOptionPane;
 import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
-import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDaoImpl;
 import utfpr.victor.projetopoo2.modelo.rn.ClienteRN;
-import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
 import utfpr.victor.projetopoo2.modelo.vo.Cliente;
-import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
 
 /**
  *
@@ -173,8 +172,10 @@ public class cadastroCliente extends javax.swing.JFrame {
         
         ClienteRN clienteRN = new ClienteRN();
         clienteRN.atualizar(cliente);
+        
+        JOptionPane.showMessageDialog(null, "Funcionario cadastrado com sucesso!");
                
-        //ConexaoHibernate.close();
+        ConexaoHibernate.close();
                
     }//GEN-LAST:event_bCADASTRARActionPerformed
 

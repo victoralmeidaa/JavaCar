@@ -27,20 +27,40 @@ public class Tela_ADM extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jCLIENTE = new javax.swing.JButton();
+        jSERVICO = new javax.swing.JButton();
+        jFUNCIONARIO = new javax.swing.JButton();
+        jSAIR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton3.setText("Cliente");
+        jCLIENTE.setText("Cliente");
+        jCLIENTE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCLIENTEActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Serviços");
+        jSERVICO.setText("Serviços");
+        jSERVICO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSERVICOActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Funcionario");
+        jFUNCIONARIO.setText("Funcionario");
+        jFUNCIONARIO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFUNCIONARIOActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Sair");
+        jSAIR.setText("Sair");
+        jSAIR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSAIRActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,31 +71,63 @@ public class Tela_ADM extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jFUNCIONARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSERVICO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 160, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jCLIENTE, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(jSAIR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jButton1)
+                .addComponent(jSERVICO)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(jFUNCIONARIO)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(jCLIENTE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(jSAIR)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jSERVICOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSERVICOActionPerformed
+        
+        
+        
+        
+        Tela_Servico tela_servico = new Tela_Servico();
+        tela_servico.setVisible(true);
+        
+    }//GEN-LAST:event_jSERVICOActionPerformed
+
+    private void jFUNCIONARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFUNCIONARIOActionPerformed
+        Tela_Funcionario tela_funcionario = new Tela_Funcionario();
+        tela_funcionario.setVisible(true);
+        
+    }//GEN-LAST:event_jFUNCIONARIOActionPerformed
+
+    private void jCLIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCLIENTEActionPerformed
+        
+        
+        Tela_Cliente tela_cliente = new Tela_Cliente();
+        tela_cliente.setVisible(true);
+        
+    }//GEN-LAST:event_jCLIENTEActionPerformed
+
+    private void jSAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSAIRActionPerformed
+        
+        
+        Tela_login tela_login = new Tela_login();
+        tela_login.setVisible(true);
+        
+    }//GEN-LAST:event_jSAIRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +165,9 @@ public class Tela_ADM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jCLIENTE;
+    private javax.swing.JButton jFUNCIONARIO;
+    private javax.swing.JButton jSAIR;
+    private javax.swing.JButton jSERVICO;
     // End of variables declaration//GEN-END:variables
 }
