@@ -5,7 +5,10 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
+import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDao;
 import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDaoImpl;
+import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
 import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
 
 /**
@@ -171,28 +174,29 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     }//GEN-LAST:event_tNOMEActionPerformed
 
     private void bCADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCADASTRARActionPerformed
-        String nome = tNOME.getText();
-        String cpf = tCPF.getText();
-        String sexo = tSEXO.getText();
-        String endereco = tENDERECO.getText();
-        String telefone = tTELEFONE.getText();
+        
+        //String nome = tNOME.getText();
+        //String cpf = tCPF.getText();
+       // String sexo = tSEXO.getText();
+        //String endereco = tENDERECO.getText();
+        //String telefone = tTELEFONE.getText();
         String salario = tSALARIO.getText();
         
         Funcionario funcionario = new Funcionario();
-        funcionario.setName(nome);
-        funcionario.setCpf(cpf);
-        funcionario.setSexo(sexo);
-        funcionario.setEndereço(endereco);
-        funcionario.setTelefone(telefone);
+
+        //funcionario.setName(nome);
+        //funcionario.setCpf(cpf);
+        //funcionario.setSexo(sexo);
+        //funcionario.setEndereço(endereco);
+        //funcionario.setTelefone(telefone);
         funcionario.setSalario(salario);
         
-        FuncionarioDaoImpl funcionarioDaoImpl = new FuncionarioDaoImpl();
-        funcionarioDaoImpl.cadastrar(funcionario);
+       FuncionarioRN funcionarioRN = new FuncionarioRN(); 
+       funcionarioRN.atualizar(funcionario);
         
-        
-        
-        
-        
+       
+        ConexaoHibernate.close();
+       
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
     private void tCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCPFActionPerformed

@@ -11,7 +11,7 @@ import utfpr.victor.projetopoo2.modelo.vo.Adm;
  */
 public class GerarBanco {
     public static void main(String[] args){
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("javacar01");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("utfpr.victor_JavaCar_jar_1.0-SNAPSHOTPU");
         
         EntityManager manager = factory.createEntityManager();
         

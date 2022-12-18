@@ -18,7 +18,7 @@ public class ConexaoHibernate {
             synchronized (ConexaoHibernate.class){
                 if(manager == null){
                     try{
-                        factory = Persistence.createEntityManagerFactory("Hibernate");
+                        factory = Persistence.createEntityManagerFactory("utfpr.victor_JavaCar_jar_1.0-SNAPSHOTPU");
                         manager = factory.createEntityManager();
                     } 
                     catch(HibernateException he){

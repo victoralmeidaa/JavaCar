@@ -29,9 +29,7 @@ public class Veiculos {
     
     private String cor;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
@@ -45,9 +43,7 @@ public class Veiculos {
         this.cor = cor;
     }
 
-    public Long getId() {
-        return id;
-    }
+    
 
     public String getCategoria() {
         return categoria;

@@ -30,7 +30,7 @@ public class Pessoa {
     
     private String telefone;
     
-    private String endereço;
+    private String endereco;
 
 
     public void setName(String name) {
@@ -49,8 +49,8 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereço(String endereco) {
+        this.endereco = endereco;
     }
     
     public String getName() {
@@ -70,7 +70,7 @@ public class Pessoa {
     }
 
     public String getEndereço() {
-        return endereço;
+        return endereco;
     }
 
 }
