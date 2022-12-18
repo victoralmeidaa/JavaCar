@@ -5,7 +5,11 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import utfpr.victor.projetopoo2.modelo.conexao.ConexaoHibernate;
 import utfpr.victor.projetopoo2.modelo.dao.FuncionarioDaoImpl;
+import utfpr.victor.projetopoo2.modelo.rn.ClienteRN;
+import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
+import utfpr.victor.projetopoo2.modelo.vo.Cliente;
 import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
 
 /**
@@ -35,7 +39,6 @@ public class cadastroCliente extends javax.swing.JFrame {
         tSEXO = new javax.swing.JTextField();
         tTELEFONE = new javax.swing.JTextField();
         tENDERECO = new javax.swing.JTextField();
-        tSALARIO = new javax.swing.JTextField();
         bCADASTRAR = new javax.swing.JButton();
         TITULO = new javax.swing.JLabel();
 
@@ -70,8 +73,6 @@ public class cadastroCliente extends javax.swing.JFrame {
         });
 
         tENDERECO.setText("Endereço");
-
-        tSALARIO.setText("Salario");
 
         bCADASTRAR.setBackground(new java.awt.Color(102, 255, 153));
         bCADASTRAR.setForeground(new java.awt.Color(102, 255, 153));
@@ -111,9 +112,7 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
@@ -137,13 +136,8 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(bCADASTRAR))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(67, 67, 67)
+                .addComponent(bCADASTRAR)
                 .addGap(109, 109, 109))
         );
 
@@ -169,17 +163,19 @@ public class cadastroCliente extends javax.swing.JFrame {
         String endereco = tENDERECO.getText();
         String telefone = tTELEFONE.getText();
         
-        Funcionario funcionario = new Funcionario();
-        funcionario.setName(nome);
-        funcionario.setCpf(cpf);
-        funcionario.setSexo(sexo);
-        funcionario.setEndereço(endereco);
-        funcionario.setTelefone(telefone);
+        Cliente cliente = new Cliente();
         
-        FuncionarioDaoImpl funcionarioDao = new FuncionarioDaoImpl();
-        funcionarioDao.cadastrar(funcionario);
+        cliente.setName(nome);
+        cliente.setCpf(cpf);
+        cliente.setSexo(sexo);
+        cliente.setEndereço(endereco);
+        cliente.setTelefone(telefone);
         
-        
+        ClienteRN clienteRN = new ClienteRN();
+        clienteRN.atualizar(cliente);
+               
+        //ConexaoHibernate.close();
+               
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
     private void tCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCPFActionPerformed
@@ -242,7 +238,6 @@ public class cadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField tCPF;
     private javax.swing.JTextField tENDERECO;
     private javax.swing.JTextField tNOME;
-    private javax.swing.JTextField tSALARIO;
     private javax.swing.JTextField tSEXO;
     private javax.swing.JTextField tTELEFONE;
     // End of variables declaration//GEN-END:variables

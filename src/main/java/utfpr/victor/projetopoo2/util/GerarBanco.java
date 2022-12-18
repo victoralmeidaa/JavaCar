@@ -17,7 +17,7 @@ public class GerarBanco {
         
         Adm adm1 = new Adm();
         
-        adm1.setName("adm");
+        adm1.setName("adm"); // inserir adm para login
         adm1.setSenha("adm");
         
         manager.getTransaction().begin();
