@@ -9,13 +9,13 @@ import javax.persistence.Table;
  * @author victo
  */
 @Entity
-@Table(name = "tb_Funcionario")
+@Table(name = "tb_funcionario")
 
 public class Funcionario extends Pessoa {
     private String salario;
     
     @OneToMany(mappedBy = "funcionario")
-    
+
     public String getSalario() {
         return salario;
     }
@@ -23,4 +23,5 @@ public class Funcionario extends Pessoa {
     public void setSalario(String salario) {
         this.salario = salario;
     }
+    
 }

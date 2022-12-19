@@ -22,6 +22,11 @@ public class Servico {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    public Servico(String descricao, String titulo) {
+        this.descricao = descricao;
+        this.titulo = titulo;
+    }
+
     private String descricao;
     
     private String titulo;

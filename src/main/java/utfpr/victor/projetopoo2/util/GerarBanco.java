@@ -15,10 +15,8 @@ public class GerarBanco {
         
         EntityManager manager = factory.createEntityManager();
         
-        Adm adm1 = new Adm();
-        
-        adm1.setName("adm"); // inserir adm para login
-        adm1.setSenha("adm");
+        Adm adm1;
+        adm1 = new Adm("adm","adm");
         
         manager.getTransaction().begin();
         manager.persist(adm1);

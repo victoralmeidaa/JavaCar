@@ -115,9 +115,7 @@ public class cadastroServico extends javax.swing.JFrame {
         String titulo = tNOME.getText();
         String descricao = tCPF.getText();
         
-        Servico servico = new Servico();
-        servico.setDescricao(descricao);
-        servico.setTitulo(titulo);
+        Servico servico = new Servico(titulo,descricao);
         
         ServicoRN servicoRn = new ServicoRN();
         servicoRn.cadastrar(servico);

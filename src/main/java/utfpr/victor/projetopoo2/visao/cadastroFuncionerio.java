@@ -89,6 +89,11 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         });
 
         bVOLTAR.setText("Voltar");
+        bVOLTAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVOLTARActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -186,15 +191,17 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         funcionario.setName(nome);
         funcionario.setCpf(cpf);
         funcionario.setSexo(sexo);
-        funcionario.setEndereço(endereco);
+        funcionario.setEndereco(endereco);
         funcionario.setTelefone(telefone);
         funcionario.setSalario(salario);
         
        FuncionarioRN funcionarioRN = new FuncionarioRN(); 
-       funcionarioRN.atualizar(funcionario);
+       funcionarioRN.cadastrar(funcionario);
         
        JOptionPane.showMessageDialog(null, "Funcionario cadastrado com sucesso!");
        
+       Tela_Funcionario telaFun = new Tela_Funcionario();
+       telaFun.setVisible(true);
        ConexaoHibernate.close();
        
     }//GEN-LAST:event_bCADASTRARActionPerformed
@@ -202,6 +209,11 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     private void tCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tCPFActionPerformed
+
+    private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed
+       Tela_Funcionario telaFun = new Tela_Funcionario();
+       telaFun.setVisible(true);
+    }//GEN-LAST:event_bVOLTARActionPerformed
 
     /**
      * @param args the command line arguments

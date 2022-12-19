@@ -40,6 +40,7 @@ public class cadastroCliente extends javax.swing.JFrame {
         tENDERECO = new javax.swing.JTextField();
         bCADASTRAR = new javax.swing.JButton();
         TITULO = new javax.swing.JLabel();
+        bVOLTAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,13 @@ public class cadastroCliente extends javax.swing.JFrame {
         TITULO.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         TITULO.setText("Cadastro Cliente");
 
+        bVOLTAR.setText("Voltar");
+        bVOLTAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVOLTARActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,9 +109,6 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addGap(114, 114, 114)
                         .addComponent(TITULO))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(bCADASTRAR))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -111,7 +116,12 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bCADASTRAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bVOLTAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
@@ -137,7 +147,9 @@ public class cadastroCliente extends javax.swing.JFrame {
                 .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67)
                 .addComponent(bCADASTRAR)
-                .addGap(109, 109, 109))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bVOLTAR)
+                .addContainerGap())
         );
 
         pack();
@@ -167,14 +179,16 @@ public class cadastroCliente extends javax.swing.JFrame {
         cliente.setName(nome);
         cliente.setCpf(cpf);
         cliente.setSexo(sexo);
-        cliente.setEndereço(endereco);
+        cliente.setEndereco(endereco);
         cliente.setTelefone(telefone);
         
         ClienteRN clienteRN = new ClienteRN();
         clienteRN.atualizar(cliente);
         
-        JOptionPane.showMessageDialog(null, "Funcionario cadastrado com sucesso!");
-               
+        JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
+        
+        Tela_Cliente telaCli = new Tela_Cliente();
+        telaCli.setVisible(true);
         ConexaoHibernate.close();
                
     }//GEN-LAST:event_bCADASTRARActionPerformed
@@ -182,6 +196,12 @@ public class cadastroCliente extends javax.swing.JFrame {
     private void tCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tCPFActionPerformed
+
+    private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed
+        Tela_Cliente telaCli = new Tela_Cliente();
+        telaCli.setVisible(true);
+        
+    }//GEN-LAST:event_bVOLTARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +256,7 @@ public class cadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TITULO;
     private javax.swing.JButton bCADASTRAR;
+    private javax.swing.JButton bVOLTAR;
     private javax.swing.JTextField tCPF;
     private javax.swing.JTextField tENDERECO;
     private javax.swing.JTextField tNOME;

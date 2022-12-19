@@ -5,11 +5,17 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import utfpr.victor.projetopoo2.modelo.rn.AdmRN;
+import utfpr.victor.projetopoo2.modelo.vo.Adm;
+
 /**
  *
  * @author victo
  */
 public class Tela_login extends javax.swing.JFrame {
+    private Object view;
 
     /**
      * Creates new form Tela_login
@@ -29,12 +35,12 @@ public class Tela_login extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jNome = new javax.swing.JTextField();
+        tNOME = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jSENHA = new javax.swing.JPasswordField();
+        tSENHA = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Login");
@@ -63,9 +69,9 @@ public class Tela_login extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(jNome, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                            .addComponent(tNOME, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                             .addComponent(jLabel3)
-                            .addComponent(jSENHA)))
+                            .addComponent(tSENHA)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addComponent(jButton1)))
@@ -79,11 +85,11 @@ public class Tela_login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tSENHA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(43, Short.MAX_VALUE))
@@ -93,11 +99,25 @@ public class Tela_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            
+        String nome = tNOME.getText();
+        String senha = tSENHA.getText();
+        
+        Adm adm;
+        adm = new Adm(nome, senha);
+   
+        
+        AdmRN admRN = new AdmRN();
+        //admRN.listarUm(Long id);
+        
+        
         
         
         
         Tela_ADM tela_adm = new Tela_ADM();
         tela_adm.setVisible(true);
+        Tela_login tela_login = new Tela_login();
+        tela_login.dispose();
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -137,12 +157,30 @@ public class Tela_login extends javax.swing.JFrame {
         });
     }
 
+    public JTextField gettNOME() {
+        return tNOME;
+    }
+
+    public void settNOME(JTextField tNOME) {
+        this.tNOME = tNOME;
+    }
+
+    public JPasswordField gettSENHA() {
+        return tSENHA;
+    }
+
+    public void settSENHA(JPasswordField tSENHA) {
+        this.tSENHA = tSENHA;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jNome;
-    private javax.swing.JPasswordField jSENHA;
+    private javax.swing.JTextField tNOME;
+    private javax.swing.JPasswordField tSENHA;
     // End of variables declaration//GEN-END:variables
 }

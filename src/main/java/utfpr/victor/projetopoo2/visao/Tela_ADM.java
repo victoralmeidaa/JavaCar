@@ -30,9 +30,12 @@ public class Tela_ADM extends javax.swing.JFrame {
         jCLIENTE = new javax.swing.JButton();
         jSERVICO = new javax.swing.JButton();
         jFUNCIONARIO = new javax.swing.JButton();
-        jSAIR = new javax.swing.JButton();
+        bSAIR = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jCLIENTE.setText("Cliente");
         jCLIENTE.addActionListener(new java.awt.event.ActionListener() {
@@ -55,43 +58,50 @@ public class Tela_ADM extends javax.swing.JFrame {
             }
         });
 
-        jSAIR.setText("Sair");
-        jSAIR.addActionListener(new java.awt.event.ActionListener() {
+        bSAIR.setText("Sair");
+        bSAIR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSAIRActionPerformed(evt);
+                bSAIRActionPerformed(evt);
             }
         });
+
+        jMenu1.setText("Menu");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Sair");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jFUNCIONARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSERVICO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 160, Short.MAX_VALUE))
+                        .addComponent(jSERVICO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bSAIR, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCLIENTE, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(jSAIR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jCLIENTE, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jFUNCIONARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jSERVICO)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jFUNCIONARIO)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCLIENTE)
-                .addGap(18, 18, 18)
-                .addComponent(jSAIR)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFUNCIONARIO)
+                    .addComponent(jCLIENTE))
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSERVICO)
+                    .addComponent(bSAIR))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,12 +114,16 @@ public class Tela_ADM extends javax.swing.JFrame {
         
         Tela_Servico tela_servico = new Tela_Servico();
         tela_servico.setVisible(true);
+        Tela_ADM view = new Tela_ADM();
+        view.dispose();
         
     }//GEN-LAST:event_jSERVICOActionPerformed
 
     private void jFUNCIONARIOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFUNCIONARIOActionPerformed
         Tela_Funcionario tela_funcionario = new Tela_Funcionario();
         tela_funcionario.setVisible(true);
+        Tela_ADM view = new Tela_ADM();
+        view.dispose();
         
     }//GEN-LAST:event_jFUNCIONARIOActionPerformed
 
@@ -118,16 +132,19 @@ public class Tela_ADM extends javax.swing.JFrame {
         
         Tela_Cliente tela_cliente = new Tela_Cliente();
         tela_cliente.setVisible(true);
+        Tela_ADM view = new Tela_ADM();
+        view.dispose();
+        
         
     }//GEN-LAST:event_jCLIENTEActionPerformed
 
-    private void jSAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSAIRActionPerformed
+    private void bSAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSAIRActionPerformed
         
         
         Tela_login tela_login = new Tela_login();
         tela_login.setVisible(true);
         
-    }//GEN-LAST:event_jSAIRActionPerformed
+    }//GEN-LAST:event_bSAIRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,9 +182,12 @@ public class Tela_ADM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bSAIR;
     private javax.swing.JButton jCLIENTE;
     private javax.swing.JButton jFUNCIONARIO;
-    private javax.swing.JButton jSAIR;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JButton jSERVICO;
     // End of variables declaration//GEN-END:variables
 }

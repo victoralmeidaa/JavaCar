@@ -38,10 +38,6 @@
                       <Component id="TITULO" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
-                      <Component id="bCADASTRAR" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                       <Component id="tNOME" min="-2" pref="220" max="-2" attributes="0"/>
                   </Group>
@@ -52,6 +48,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="tENDERECO" min="-2" pref="220" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="bCADASTRAR" max="32767" attributes="0"/>
+                          <Component id="bVOLTAR" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
@@ -87,7 +90,9 @@
               <Component id="tENDERECO" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Component id="bCADASTRAR" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="bVOLTAR" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -151,6 +156,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastro Cliente"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bVOLTAR">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bVOLTARActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

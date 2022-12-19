@@ -22,55 +22,45 @@ public class Pessoa {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String nome;
     
     private String cpf;
-    
-    private String sexo;
     
     private String telefone;
     
     private String endereco;
 
-
-    public void setName(String name) {
-        this.name = name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public void setEndereço(String endereco) {
-        this.endereco = endereco;
-    }
-    
-    public String getName() {
-        return name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public String getSexo() {
-        return sexo;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public String getEndereço() {
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
         return endereco;
     }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+  
 
 }

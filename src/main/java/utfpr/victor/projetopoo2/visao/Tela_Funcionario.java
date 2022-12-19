@@ -5,17 +5,27 @@
  */
 package utfpr.victor.projetopoo2.visao;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
+import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
+
 /**
  *
  * @author victo
  */
 public class Tela_Funcionario extends javax.swing.JFrame {
 
+    private Funcionario funcionario;
+    private FuncionarioRN funcionarioRN;
+    private List<Funcionario> funcionarios;
     /**
      * Creates new form Tela_Funcionario
      */
     public Tela_Funcionario() {
         initComponents();
+        this.funcionario = new Funcionario();
+        this.funcionarioRN = new FuncionarioRN();
     }
 
     /**
@@ -28,71 +38,68 @@ public class Tela_Funcionario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        bCADASTRAR = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        tTABELA = new javax.swing.JTable();
+        bALTERAR = new javax.swing.JButton();
+        bEXCLUIR = new javax.swing.JButton();
+        bPESQUISAR = new javax.swing.JButton();
+        txtPesquisar = new javax.swing.JTextField();
+        bTODOS = new javax.swing.JButton();
+        bVOLTAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Funcionario");
 
-        jToggleButton2.setText("Novo");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        bCADASTRAR.setText("Novo");
+        bCADASTRAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                bCADASTRARActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tTABELA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Id", "Nome", "CPF", "Sexo", "Telefone", "Endereco", "Salario"
+                "Nome", "CPF", "Salario"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
+        ));
+        jScrollPane1.setViewportView(tTABELA);
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
+        bALTERAR.setText("Atualizar");
 
-        jButton1.setText("Atualizar");
-
-        jButton2.setText("Excluir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bEXCLUIR.setText("Excluir");
+        bEXCLUIR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bEXCLUIRActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Pesquisar");
-
-        jButton4.setText("Todos");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bPESQUISAR.setText("Pesquisar");
+        bPESQUISAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                bPESQUISARActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Voltar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        bTODOS.setText("Todos");
+        bTODOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                bTODOSActionPerformed(evt);
+            }
+        });
+
+        bVOLTAR.setText("Voltar");
+        bVOLTAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVOLTARActionPerformed(evt);
             }
         });
 
@@ -108,22 +115,22 @@ public class Tela_Funcionario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jButton3)
+                        .addComponent(bPESQUISAR)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bTODOS, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bCADASTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bALTERAR, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bEXCLUIR, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bVOLTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 24, Short.MAX_VALUE))
         );
@@ -134,38 +141,67 @@ public class Tela_Funcionario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bPESQUISAR)
+                    .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(bEXCLUIR)
+                    .addComponent(bALTERAR)
+                    .addComponent(bCADASTRAR)
+                    .addComponent(bTODOS)
+                    .addComponent(bVOLTAR))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void bCADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCADASTRARActionPerformed
+        cadastroFuncionerio cadFun = new cadastroFuncionerio();
+        cadFun.setVisible(true);
+    }//GEN-LAST:event_bCADASTRARActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEXCLUIRActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bEXCLUIRActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void bTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTODOSActionPerformed
+        
+        try {
+            DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
+            model.setNumRows(0);
+            
+            this.funcionarios = funcionarioRN.listarTodos();
+            for(Funcionario funcionario : funcionarios){
+                String [] linha = {funcionario.getNome(), funcionario.getCpf(), funcionario.getSalario()};
+                model.addRow(linha);
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_bTODOSActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed
+        Tela_ADM tela_adm = new Tela_ADM();
+        tela_adm.setVisible(true);
+    }//GEN-LAST:event_bVOLTARActionPerformed
+
+    private void bPESQUISARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPESQUISARActionPerformed
+        String filtro = txtPesquisar.getName();
+        
+        try {
+            DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
+            model.setNumRows(0);
+            this.funcionarios = funcionarioRN.listarTodos();
+            for(Funcionario funcionario : funcionarios){
+                String [] linha = {funcionario.getName(), funcionario.getCpf(), funcionario.getSalario()};
+                model.addRow(linha);
+            }
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_bPESQUISARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,15 +239,15 @@ public class Tela_Funcionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton bALTERAR;
+    private javax.swing.JToggleButton bCADASTRAR;
+    private javax.swing.JButton bEXCLUIR;
+    private javax.swing.JButton bPESQUISAR;
+    private javax.swing.JButton bTODOS;
+    private javax.swing.JButton bVOLTAR;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JTable tTABELA;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

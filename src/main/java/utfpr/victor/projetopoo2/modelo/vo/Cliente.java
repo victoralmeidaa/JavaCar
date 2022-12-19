@@ -14,15 +14,17 @@ import javax.persistence.Table;
 
 
 public class Cliente extends Pessoa {
-    private Integer idCli;
+    private Integer contrato;
     
     @OneToMany(mappedBy = "cliente")
-    
-    public Integer getIdCli() {
-        return idCli;
+
+    public Integer getContrato() {
+        return contrato;
+    }
+
+    public void setContrato(Integer contrato) {
+        this.contrato = contrato;
     }
     
-    public void setIdCli(Integer idCli) {
-        this.idCli = idCli;
-    }
+
 }
