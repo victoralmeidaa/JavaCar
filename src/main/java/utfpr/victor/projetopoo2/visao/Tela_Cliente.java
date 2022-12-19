@@ -45,7 +45,7 @@ public class Tela_Cliente extends javax.swing.JFrame {
         bATUALIZAR = new javax.swing.JButton();
         bEXCLUIR = new javax.swing.JButton();
         bPESQUISA = new javax.swing.JButton();
-        tPESQUISA = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JTextField();
         bTODOS = new javax.swing.JButton();
         bVOLTAR = new javax.swing.JButton();
 
@@ -63,17 +63,14 @@ public class Tela_Cliente extends javax.swing.JFrame {
 
         tTABELA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Nome", "CPF", "Sexo", "Telefone", "Endereco"
+                "Nome", "CPF", "Telefone", "Endereco"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -83,6 +80,11 @@ public class Tela_Cliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tTABELA);
 
         bATUALIZAR.setText("Atualizar");
+        bATUALIZAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bATUALIZARActionPerformed(evt);
+            }
+        });
 
         bEXCLUIR.setText("Excluir");
         bEXCLUIR.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +125,7 @@ public class Tela_Cliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(bPESQUISA)
                         .addGap(18, 18, 18)
-                        .addComponent(tPESQUISA, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 46, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,9 +136,9 @@ public class Tela_Cliente extends javax.swing.JFrame {
                         .addComponent(bCADASTRAR, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(bATUALIZAR, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bEXCLUIR, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(24, 24, 24)
                         .addComponent(bVOLTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(205, 205, 205)
@@ -151,7 +153,7 @@ public class Tela_Cliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bPESQUISA)
-                    .addComponent(tPESQUISA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
@@ -173,7 +175,8 @@ public class Tela_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
     private void bEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEXCLUIRActionPerformed
-        // TODO add your handling code here:
+        ClienteRN clienteRN = new ClienteRN();
+        clienteRN.excluir(cliente);
     }//GEN-LAST:event_bEXCLUIRActionPerformed
 
     private void bTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTODOSActionPerformed
@@ -191,13 +194,29 @@ public class Tela_Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_bTODOSActionPerformed
 
     private void bPESQUISAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPESQUISAActionPerformed
+        String filtro = txtPesquisar.getName();
         
+        try {
+            DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
+            model.setNumRows(0);
+            this.clientes = clienteRN.listarFitroLike(filtro);
+            for(Cliente cliente : clientes){
+                String [] linha = {cliente.getNome(), cliente.getCpf(),cliente.getTelefone(),cliente.getEndereco()};
+                model.addRow(linha);
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_bPESQUISAActionPerformed
 
     private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed
         Tela_ADM tela_adm = new Tela_ADM();
         tela_adm.setVisible(true);
     }//GEN-LAST:event_bVOLTARActionPerformed
+
+    private void bATUALIZARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bATUALIZARActionPerformed
+        ClienteRN clienteRN = new ClienteRN();
+        clienteRN.atualizar(cliente);
+    }//GEN-LAST:event_bATUALIZARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,7 +263,7 @@ public class Tela_Cliente extends javax.swing.JFrame {
     private javax.swing.JButton bVOLTAR;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tPESQUISA;
     private javax.swing.JTable tTABELA;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

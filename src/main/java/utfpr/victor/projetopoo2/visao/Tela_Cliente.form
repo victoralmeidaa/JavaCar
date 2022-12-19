@@ -30,7 +30,7 @@
                   <Group type="102" attributes="0">
                       <Component id="bPESQUISA" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="tPESQUISA" min="-2" pref="317" max="-2" attributes="0"/>
+                      <Component id="txtPesquisar" min="-2" pref="317" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
@@ -44,9 +44,9 @@
                       <Component id="bCADASTRAR" min="-2" pref="101" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="bATUALIZAR" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="bEXCLUIR" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="bVOLTAR" min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -66,7 +66,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bPESQUISA" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tPESQUISA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="196" max="-2" attributes="0"/>
@@ -110,21 +110,15 @@
         <Component class="javax.swing.JTable" name="tTABELA">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="5" rowCount="4">
+              <Table columnCount="4" rowCount="0">
                 <Column editable="true" title="Nome" type="java.lang.String"/>
                 <Column editable="true" title="CPF" type="java.lang.String"/>
-                <Column editable="true" title="Sexo" type="java.lang.String"/>
                 <Column editable="true" title="Telefone" type="java.lang.String"/>
                 <Column editable="true" title="Endereco" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -158,6 +152,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bATUALIZARActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bEXCLUIR">
       <Properties>
@@ -175,7 +172,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bPESQUISAActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="tPESQUISA">
+    <Component class="javax.swing.JTextField" name="txtPesquisar">
     </Component>
     <Component class="javax.swing.JButton" name="bTODOS">
       <Properties>

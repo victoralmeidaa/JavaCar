@@ -57,4 +57,13 @@ public class ClienteDaoImpl implements ClienteDao {
         
         return cliente;
     }
+    
+    @Override
+    public List<Cliente> ListarFiltroLike(String like) {
+        List<Cliente> clientes;
+        
+        Query query = manager.createQuery("SELECT c FROM Cliente c WHERE c.nome LIKE '%" + like + "%'");
+        clientes = query.getResultList();
+        return clientes;
+    }
 }

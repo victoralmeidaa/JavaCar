@@ -57,4 +57,13 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
         
         return funcionario; 
     } 
+        
+    @Override
+    public List<Funcionario> ListarFiltroLike(String like) {
+        List<Funcionario> funcionarios;
+        
+        Query query = manager.createQuery("SELECT c FROM Funcionario c WHERE c.nome LIKE '%" + like + "%'");
+        funcionarios = query.getResultList();
+        return funcionarios;
+    }  
 }

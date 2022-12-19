@@ -6,6 +6,7 @@
 package utfpr.victor.projetopoo2.visao;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
 import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
@@ -62,18 +63,20 @@ public class Tela_Funcionario extends javax.swing.JFrame {
 
         tTABELA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Nome", "CPF", "Salario"
+                "Nome", "CPF", "Telefone", "Endereco", "Salario"
             }
         ));
         jScrollPane1.setViewportView(tTABELA);
 
         bALTERAR.setText("Atualizar");
+        bALTERAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bALTERARActionPerformed(evt);
+            }
+        });
 
         bEXCLUIR.setText("Excluir");
         bEXCLUIR.addActionListener(new java.awt.event.ActionListener() {
@@ -164,22 +167,36 @@ public class Tela_Funcionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
     private void bEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEXCLUIRActionPerformed
-        // TODO add your handling code here:
+       FuncionarioRN funcionarioRN1 =new FuncionarioRN();
+       funcionarioRN1.excluir(funcionario);
+        
+        try{
+            int linha =   tTABELA.getSelectedRow();
+            Long id = Long.valueOf(tTABELA.getValueAt(linha, 0).toString());
+            Funcionario funFind = funcionarioRN.listarUm(id);
+            funcionarioRN.excluir(funFind);
+
+            DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
+            model.removeRow(linha);
+            JOptionPane.showMessageDialog(null, "Funcionario Excluído com Sucesso!");
+            //this.setCloseable(true);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+        } 
     }//GEN-LAST:event_bEXCLUIRActionPerformed
 
     private void bTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTODOSActionPerformed
         
         try {
             DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
-            model.setNumRows(0);
-            
+            model.setNumRows(0);  
             this.funcionarios = funcionarioRN.listarTodos();
             for(Funcionario funcionario : funcionarios){
-                String [] linha = {funcionario.getNome(), funcionario.getCpf(), funcionario.getSalario()};
+                String [] linha = {funcionario.getNome(), funcionario.getCpf(),funcionario.getTelefone(),funcionario.getEndereco(), funcionario.getSalario()};
                 model.addRow(linha);
             }
         } catch (Exception e) {
-        }
+        } 
     }//GEN-LAST:event_bTODOSActionPerformed
 
     private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed
@@ -193,15 +210,20 @@ public class Tela_Funcionario extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
             model.setNumRows(0);
-            this.funcionarios = funcionarioRN.listarTodos();
+            this.funcionarios = funcionarioRN.listarFitroLike(filtro);
             for(Funcionario funcionario : funcionarios){
-                String [] linha = {funcionario.getName(), funcionario.getCpf(), funcionario.getSalario()};
+                String [] linha = {funcionario.getNome(), funcionario.getCpf(),funcionario.getTelefone(),funcionario.getEndereco(), funcionario.getSalario()};
                 model.addRow(linha);
             }
         } catch (Exception e) {
         }
         
     }//GEN-LAST:event_bPESQUISARActionPerformed
+
+    private void bALTERARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bALTERARActionPerformed
+        FuncionarioRN funcionarioRN = new FuncionarioRN();
+        funcionarioRN.atualizar(funcionario);
+    }//GEN-LAST:event_bALTERARActionPerformed
 
     /**
      * @param args the command line arguments

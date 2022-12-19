@@ -41,4 +41,7 @@ public class FuncionarioRN {
         return funcionarioDao.listarUm(id);
     }
     
+    public List<Funcionario> listarFitroLike(String like) {
+        return funcionarioDao.ListarFiltroLike(like);
+    }
 }

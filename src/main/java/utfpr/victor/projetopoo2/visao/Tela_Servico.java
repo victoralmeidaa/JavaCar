@@ -1,21 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package utfpr.victor.projetopoo2.visao;
+
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import utfpr.victor.projetopoo2.modelo.rn.FuncionarioRN;
+import utfpr.victor.projetopoo2.modelo.rn.ServicoRN;
+import utfpr.victor.projetopoo2.modelo.vo.Funcionario;
+import utfpr.victor.projetopoo2.modelo.vo.Servico;
 
 /**
  *
  * @author victo
  */
 public class Tela_Servico extends javax.swing.JFrame {
-
+    private Servico servico;
+    private ServicoRN servicoRN;
+    private List<Servico> servicos;
+    
+    
     /**
      * Creates new form Tela_Funcionario
      */
     public Tela_Servico() {
         initComponents();
+        this.servico = new Servico();
+        this.servicoRN = new ServicoRN();
     }
 
     /**
@@ -52,9 +60,6 @@ public class Tela_Servico extends javax.swing.JFrame {
 
         tTABELA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
                 {null, null}
             },
             new String [] {
@@ -159,11 +164,21 @@ public class Tela_Servico extends javax.swing.JFrame {
     }//GEN-LAST:event_bCADASTRARActionPerformed
 
     private void bEXCLUIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEXCLUIRActionPerformed
-        // TODO add your handling code here:
+        ServicoRN servicoRN = new ServicoRN();
+        servicoRN.excluir(servico);
     }//GEN-LAST:event_bEXCLUIRActionPerformed
 
     private void bTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTODOSActionPerformed
-        // TODO add your handling code here:
+        try {
+            DefaultTableModel model = (DefaultTableModel) tTABELA.getModel();
+            model.setNumRows(0);  
+            this.servicos = servicoRN.listarTodos();
+            for(Servico servico : servicos){
+                String [] linha = {servico.getTitulo(), servico.getDescricao()};
+                model.addRow(linha);
+            }
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_bTODOSActionPerformed
 
     private void bVOLTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVOLTARActionPerformed

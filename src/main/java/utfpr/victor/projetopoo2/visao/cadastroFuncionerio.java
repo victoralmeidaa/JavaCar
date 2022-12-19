@@ -35,7 +35,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         TITULO = new javax.swing.JLabel();
         tNOME = new javax.swing.JTextField();
         tCPF = new javax.swing.JTextField();
-        tSEXO = new javax.swing.JTextField();
         tTELEFONE = new javax.swing.JTextField();
         tENDERECO = new javax.swing.JTextField();
         tSALARIO = new javax.swing.JTextField();
@@ -58,13 +57,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         tCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tCPFActionPerformed(evt);
-            }
-        });
-
-        tSEXO.setText("Sexo");
-        tSEXO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tSEXOActionPerformed(evt);
             }
         });
 
@@ -120,9 +112,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
                         .addGap(100, 100, 100)
                         .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bCADASTRAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -134,40 +123,28 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(tCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
-                        .addComponent(tTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(TITULO))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(tCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tTELEFONE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(bCADASTRAR))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(tSALARIO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bCADASTRAR)
+                .addGap(18, 18, 18)
                 .addComponent(bVOLTAR)
-                .addContainerGap())
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tSEXOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tSEXOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tSEXOActionPerformed
 
     private void tTELEFONEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tTELEFONEActionPerformed
         // TODO add your handling code here:
@@ -181,16 +158,15 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
         
         String nome = tNOME.getText();
         String cpf = tCPF.getText();
-        String sexo = tSEXO.getText();
         String endereco = tENDERECO.getText();
         String telefone = tTELEFONE.getText();
         String salario = tSALARIO.getText();
         
         Funcionario funcionario = new Funcionario();
 
-        funcionario.setName(nome);
+        funcionario.setNome(nome);
         funcionario.setCpf(cpf);
-        funcionario.setSexo(sexo);
+
         funcionario.setEndereco(endereco);
         funcionario.setTelefone(telefone);
         funcionario.setSalario(salario);
@@ -265,7 +241,6 @@ public class cadastroFuncionerio extends javax.swing.JFrame {
     private javax.swing.JTextField tENDERECO;
     private javax.swing.JTextField tNOME;
     private javax.swing.JTextField tSALARIO;
-    private javax.swing.JTextField tSEXO;
     private javax.swing.JTextField tTELEFONE;
     // End of variables declaration//GEN-END:variables
 }

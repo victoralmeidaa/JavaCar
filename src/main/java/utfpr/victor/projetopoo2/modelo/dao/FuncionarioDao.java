@@ -17,4 +17,6 @@ public interface FuncionarioDao {
     List<Funcionario> listarTodos();
     
     Funcionario listarUm(Long id);
+    
+    List<Funcionario> ListarFiltroLike(String like);
 }

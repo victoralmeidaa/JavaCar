@@ -41,4 +41,8 @@ public class ClienteRN {
     public Cliente listarUm(Long id){
         return clienteDao.listarUm(id);
     }
+    
+    public List<Cliente> listarFitroLike(String like) {
+        return clienteDao.ListarFiltroLike(like);
+    }
 }

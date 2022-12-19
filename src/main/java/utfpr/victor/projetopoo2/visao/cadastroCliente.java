@@ -145,11 +145,11 @@ public class cadastroCliente extends javax.swing.JFrame {
                         .addComponent(tSEXO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addComponent(tENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(18, 18, 18)
                 .addComponent(bCADASTRAR)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(bVOLTAR)
-                .addContainerGap())
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,15 +170,13 @@ public class cadastroCliente extends javax.swing.JFrame {
     private void bCADASTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCADASTRARActionPerformed
         String nome = tNOME.getText();
         String cpf = tCPF.getText();
-        String sexo = tSEXO.getText();
         String endereco = tENDERECO.getText();
         String telefone = tTELEFONE.getText();
         
         Cliente cliente = new Cliente();
         
-        cliente.setName(nome);
+        cliente.setNome(nome);
         cliente.setCpf(cpf);
-        cliente.setSexo(sexo);
         cliente.setEndereco(endereco);
         cliente.setTelefone(telefone);
         

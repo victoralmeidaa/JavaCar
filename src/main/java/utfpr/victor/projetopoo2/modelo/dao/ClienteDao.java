@@ -17,4 +17,6 @@ public interface ClienteDao {
     List<Cliente> listarTodos();   
     
     Cliente listarUm(Long id);
+    
+    List<Cliente> ListarFiltroLike(String like);
 }
